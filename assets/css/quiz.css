@@ -1,16 +1,4 @@
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-   box-sizing: border-box;
-}
-.mainSection{
+.quizSection{
     display: flex;
     align-items: center;
     align-content: center;
@@ -20,7 +8,7 @@ body {
 box-sizing: border-box;
 }
 
-#game {
+#quizGame {
     display: flex;
 
     height: 500px;
@@ -28,24 +16,24 @@ box-sizing: border-box;
     flex-flow: column;
     align-items: center;
 }
-#testImage {
+#quizTestImage {
 max-width: 500px;
 max-height: 500px;
 
 }
 
-#testText {
+#quizTestText {
     font-size: 20px;
     color: rgb(0, 0, 0);
     padding: 4%;
 }
-#options {
+#quizOptions {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
     width: 40%;
 }
-.button {
+.quizButton {
     width: 100px;
     height: 30px;
     border-radius: 15px;
@@ -57,31 +45,31 @@ max-height: 500px;
     color: white;
 }
 
-#buttonTrue {
+#quizButtonTrue {
     background-color: green;
 }
-#buttonFalse {
+#quizButtonFalse {
     background-color: rgb(236, 109, 109);
 }
-#buttonRestart {
+#quizButtonRestart {
     display: none;
 }
 
-#buttonNext {
+#quizButtonNext {
     margin-top: 30px;
     background-color: rgb(115, 115, 197);
     display: none;
 
 }
-#result {
+#quizResult {
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-#buttonRestart {
+#quizButtonRestart {
     background-color: rgb(188, 131, 209);
     display: none;
 }
-#explanation {
+#quizExplanation {
     padding: 20px;
     font-size: 20px;
 }

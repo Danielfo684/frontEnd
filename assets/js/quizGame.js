@@ -13,31 +13,31 @@ function init() {
 
 function game(text) {
     
-    document.getElementById('score').textContent = 'Score: ';
+    document.getElementById('quizScore').textContent = 'Score: ';
     
     showQuestion(text);
 
     //buttons
-    document.getElementById('buttonTrue').addEventListener('click', () => {
+    document.getElementById('quizButtonTrue').addEventListener('click', () => {
         checkAnswer(1);
     });
-    document.getElementById('buttonFalse').addEventListener('click', () => {
+    document.getElementById('quizButtonFalse').addEventListener('click', () => {
         checkAnswer(0);
     });
 
-    document.getElementById('buttonNext').addEventListener('click', () => {
+    document.getElementById('quizButtonNext').addEventListener('click', () => {
         nextQuestion(text);
     });
 
     //restart
-    document.getElementById('buttonRestart').addEventListener('click', () => {
-        document.getElementById('buttonRestart').style.display = 'none';
+    document.getElementById('quizButtonRestart').addEventListener('click', () => {
+        document.getElementById('quizButtonRestart').style.display = 'none';
         assignedQuestion = 1;
         //showQuestion(text);
-        document.getElementById('result').textContent = '';
+        document.getElementById('quizResult').textContent = '';
         showButtons();
         score = 0;
-        document.getElementById('score').textContent = 'Score: ' + score;
+        document.getElementById('quizScore').textContent = 'Score: ' + score;
         init();
     });
 
@@ -48,45 +48,45 @@ function game(text) {
 function checkAnswer(buttonValidation) {
     hideButtons();
     if (question.correct === buttonValidation) {
-        document.getElementById('result').textContent = 'Correct';
+        document.getElementById('quizResult').textContent = 'Correct';
         score++;
-        document.getElementById('score').textContent = 'Score: ' + score;
+        document.getElementById('quizScore').textContent = 'Score: ' + score;
     } else {
-        document.getElementById('result').textContent = 'Incorrect';
+        document.getElementById('quizResult').textContent = 'Incorrect';
     }
-    document.getElementById('explanation').textContent = question.realNew;
+    document.getElementById('quizExplanation').textContent = question.realNew;
 }
 
 //hideButtons
 function hideButtons() {
-    document.getElementById('buttonTrue').style.display = 'none';
-    document.getElementById('buttonFalse').style.display = 'none';
-    document.getElementById('buttonNext').style.display = 'block';
+    document.getElementById('quizButtonTrue').style.display = 'none';
+    document.getElementById('quizButtonFalse').style.display = 'none';
+    document.getElementById('quizButtonNext').style.display = 'block';
 }
 
 //showButtons
 function showButtons() {
-    document.getElementById('buttonTrue').style.display = 'block';
-    document.getElementById('buttonFalse').style.display = 'block';
-    document.getElementById('buttonNext').style.display = 'none';
+    document.getElementById('quizButtonTrue').style.display = 'block';
+    document.getElementById('quizButtonFalse').style.display = 'block';
+    document.getElementById('quizButtonNext').style.display = 'none';
 }
 
 //nextQuestion
 function nextQuestion(text) {
     assignedQuestion++;
     if (assignedQuestion >= text.questions.length) {
-        document.getElementById('buttonRestart').style.display = 'block';
-        document.getElementById('buttonNext').style.display = 'none';
+        document.getElementById('quizButtonRestart').style.display = 'block';
+        document.getElementById('quizButtonNext').style.display = 'none';
     } else {
         showQuestion(text);
-        document.getElementById('result').textContent = '';
+        document.getElementById('quizResult').textContent = '';
         showButtons();
     }
 }
 
 function showQuestion(text) {
     question = text.questions[assignedQuestion];
-    document.getElementById('testImage').src = question.img ? question.img : defaultImage;
-    document.getElementById('testText').textContent = question.question;
+    document.getElementById('quizTestImage').src = question.img ? question.img : defaultImage;
+    document.getElementById('quizTestText').textContent = question.question;
 }
 window.onload = init();
