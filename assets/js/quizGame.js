@@ -1,3 +1,4 @@
+
 let question;
 let assignedQuestion = 0;
 let correctAnswer;
@@ -10,6 +11,7 @@ function init() {
     .then(response => response.json())
     .then(text => game(text));
 }
+
 function game(text) {
     
     document.getElementById('score').textContent = 'Score: ';
@@ -30,14 +32,7 @@ function game(text) {
 
     //restart
     document.getElementById('buttonRestart').addEventListener('click', () => {
-        document.getElementById('buttonRestart').style.display = 'none';
-        assignedQuestion = 1;
-        //showQuestion(text);
-        document.getElementById('result').textContent = '';
-        showButtons();
-        score = 0;
-        document.getElementById('score').textContent = 'Score: ' + score;
-        init();
+location.reload();
     });
 
 
@@ -54,6 +49,7 @@ function checkAnswer(buttonValidation) {
         document.getElementById('result').textContent = 'Incorrect';
     }
     document.getElementById('explanation').textContent = question.realNew;
+    document.getElementById('explanation').style.display = 'block';
 }
 
 //hideButtons
@@ -81,6 +77,7 @@ function nextQuestion(text) {
         document.getElementById('result').textContent = '';
         showButtons();
     }
+    document.getElementById('explanation').style.display = 'none';
 }
 
 function showQuestion(text) {
