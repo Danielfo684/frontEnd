@@ -12,7 +12,7 @@ function init() {
 }
 
 function game(text) {
-    //test
+    //test2
     showQuestion(text);
 
     //buttons
