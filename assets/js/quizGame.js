@@ -12,9 +12,7 @@ function init() {
 }
 
 function game(text) {
-    
-    document.getElementById('quizScore').textContent = 'Score: ';
-    
+    //test
     showQuestion(text);
 
     //buttons
